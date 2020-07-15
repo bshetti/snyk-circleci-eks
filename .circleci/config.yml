@@ -126,7 +126,7 @@ workflows:
           requires:
             - build_and_scan_image
       - deploy_app:
-          cluster-name: ${CIRCLE_PROJECT_REPONAME}
+          cluster-name: ${EKS_CLUSTER_NAME}
           aws-region: ${AWS_REGION_ENV_VAR_NAME}
           docker-image-name: "$AWS_ECR_ACCOUNT_URL_ENV_VAR_NAME/${CIRCLE_PROJECT_REPONAME}:${CIRCLE_SHA1}"
           version-info: "${CIRCLE_SHA1}"
